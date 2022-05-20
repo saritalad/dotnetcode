@@ -1,0 +1,33 @@
+<p>emplist works!</p>
+<table class="table table-stripped table-hover">
+    <thead class="thead-light">
+      <tr>
+       <th scope="col">employee Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Designation</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Joining Date</th>
+        <th scope="col">Marital Status</th>
+        <th scope="col">Photo Identity</th>
+        <th scope="col"><button class="btn btn-primary" routerLink="/add">New Employee</button></th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+         <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.designation}}</td>
+        <td>{{emp.salary}}</td>
+        <td>{{emp.joinDate}}</td>
+        <td>{{emp.maritalStatus}}</td>
+        <td><img class="images" src={{emp.imageUrl}} alt="{{emp.name}}" width="100px" height="100px"></td>
+        <td><a routerLink="/edit/{{emp.id}}"  class="btn btn-warning" >Edit</a></td> 
+        <td><a routerLink="/update/{{emp.id}}"  class="btn btn-warning" >update</a></td>
+       <td><a routerLink="/details/{{emp.id}}"  class="btn btn-warning" >details</a></td> 
+        <td><button type="button" class="btn btn-primary" (click)="deleteEmployee(emp.id) "href="javascript:void()" >Delete</button></td>
+      </tr>
+          </tbody>
+  </table>
+  

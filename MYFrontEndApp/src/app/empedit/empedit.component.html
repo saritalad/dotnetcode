@@ -1,0 +1,95 @@
+<p>empedit works!</p>
+{{currentemp.name}}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+
+        <h1>Edit Employee </h1>
+        <form [formGroup]="empForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <label for="name"> Name </label>
+                <input class="form-control" type="text" id="name" name="Name" formControlName="name">
+                <div class="text-danger" *ngIf="Name.errors && Name.touched">
+                    <div *ngIf="Name.errors['required']">Name can not be empty</div>
+                    <div *ngIf="Name.errors['minlength']">minimum 4 characters </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age </label>
+                <input class="form-control" type="text" id="age" name="Age" formControlName="age" min="18">
+                <div class="text-danger" *ngIf="Age.errors && Age.touched">
+                    <div *ngIf="Age.errors['required']">Age can not be empty</div>
+                    <div *ngIf="Age.errors['minvalue']">minimum 18 years </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input class="form-control" type="text" id="designation" name="Designation" placeholder="designation"
+                    formControlName="designation">
+            </div>
+            <div class="form-group">
+                <label for="Salary">Salary</label>
+                <input class="form-control" type="text" id="salary" name="Salary" placeholder="salary"
+                    formControlName="salary">
+            </div>
+            <div class="form-group">
+                <label for="joindate">Join Date</label>
+                <input class="form-control" type="text" id="joindate" name="Joindate" formControlName="joinDate"
+                    placeholder="yyyy-MM-dd">
+            </div>
+            <div class="form-group">
+                <label for="maritalStatus">Marital Status </label>
+                <input class="form-control" type="text" id="maritaStatus" name="MaritalStatus"
+                    placeholder="maritalStatus" formControlName="maritalStatus">
+            </div>
+            
+            <!-- <div class="form-group">
+                <label for="street">street</label>
+                <input class="form-control" type="text" id="street" name="Street" formControlName="street"
+                    placeholder="street">
+            </div>
+
+            <div class="form-group">
+                <label for="city">City </label>
+                <input class="form-control" type="text" id="city" name="City" formControlName="city">
+                <div class="text-danger" *ngIf="City.errors && City.touched">
+                    <div *ngIf="City.errors['required']">City can not be empty</div>
+                    <div *ngIf="City.errors['minlength']">minimum 4 characters </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="HouseNo">House No</label>
+                <input class="form-control" type="text" id="houseNo" name="houseNo" formControlName="houseNo"
+                    placeholder="houseNo">
+            </div>
+
+
+
+            <div class="form-group">
+                <label for="pincode"> PIN Code </label>
+                <input class="form-control" type="text" id="pincode" name="Pincode" formControlName="pincode">
+                <div class="text-danger" *ngIf="Pincode.errors && Pincode.touched">
+                    <div *ngIf="Pincode.errors['required']">Pincode can not be empty</div>
+                    <div *ngIf="Pincode.errors['minlength']">minimum 4 characters </div>
+                </div>
+            </div> -->
+
+            <div class="form-group">
+                <button class="btn btn-success" type="submit"  >Submit</button>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+
+      <p >touched:{{Name.touched}}</p>
+    <p >untouched:{{Name.untouched}}</p>
+    <p >dirty:{{Name.dirty}}</p>
+    <p >pristine:{{Name.pristine}}</p>
+    <p >valid:{{Name.valid}}</p>
+    <p >Invalid:{{Name.invalid}}</p>
+    <p >errors:{{Name.errors|json}}</p>
+    <p >value:{{Name.value}}</p>
